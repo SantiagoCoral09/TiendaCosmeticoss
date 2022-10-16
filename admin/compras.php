@@ -8,7 +8,7 @@ include 'encabezado.php';
 
 $user=$_SESSION['usuario'];
 
-$sql="select * from usuarios, productos, compras where (idProd=idPoductoCompra) AND (idUsuario=idClienteCompra)";	
+$sql="select * from usuarios, productos, compras where (productos.idProd=compras.idPoductoCompra) AND (usuarios.idUsuario=compras.idClienteCompra)";	
 $resultado=$conexion->query($sql);
 
  ?>

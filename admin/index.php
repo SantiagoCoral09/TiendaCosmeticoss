@@ -1,14 +1,15 @@
 <?php 
 session_start();
 if (!isset($_SESSION['usuario'])) {
-    header("Location: ../login.php");
+    header("Location: ../index.php");
 }
 require "../Model/conexion.php";
 include 'encabezado.php';
 
 $user=$_SESSION['usuario'];
+$idUser=$_SESSION['id'];
 
-$sql = "SELECT * FROM usuarios WHERE correo = '$user'";
+$sql = "SELECT * FROM usuarios WHERE idUsuario = '$idUser'";
 $resultado = $conexion->query($sql);
 $existe=$resultado->num_rows;////num_rows contiene el numero de resultados obtenidos de la consulta sql
 

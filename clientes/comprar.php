@@ -25,7 +25,7 @@ while($row = $resultadoProducto->fetch_array()){
     $precio = $row['precio'];
     $cantidadInventario=$row['cantidad'];
 }
-echo 'idcli '.$idCliente.' idprod '.$idProducto.' cantCom'.$cantidadCompra.' precio '.$precio.' cantHabia '.$cantidadInventario;
+// echo 'idcli '.$idCliente.' idprod '.$idProducto.' cantCom'.$cantidadCompra.' precio '.$precio.' cantHabia '.$cantidadInventario;
 if($cantidadInventario < $cantidadCompra){
     header("location:../clientes/productos.php?error=1");//No hay suficientes
 }else{
