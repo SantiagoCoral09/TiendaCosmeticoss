@@ -51,7 +51,6 @@ $existe=$resultado->num_rows;////num_rows contiene el numero de resultados obten
                         <th class="text-center">Apellidos</th>
                         <th class="text-center">Correo</th>
                         <th class="text-center">Celular</th>
-                        <th class="text-center">Password</th>
                         <th class="text-center">ROL</th>
                         <th class="text-center" colspan="2">Acciones</th>
 
@@ -88,9 +87,6 @@ $existe=$resultado->num_rows;////num_rows contiene el numero de resultados obten
                             </td>
                             <td>
                                 <?php echo $celular; ?>
-                            </td>
-                            <td>
-                                <?php echo $password; ?>
                             </td>
                             <td>
                                 <?php echo $tipoUser; ?>

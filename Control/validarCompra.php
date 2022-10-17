@@ -27,11 +27,11 @@ if($cantidadInventario < $cantidadCompra){
     header("location:../clientes/productos.php?error=1");//No hay suficientes
 }else{
     $cantidadInv=$cantidadInventario-$cantidadCompra;
-    $valorEnvio=($cantidadCompra*$precio*10)/100;
+    $valorEnvio=1000;
     $valorTotal=$valorEnvio+($cantidadCompra*$precio);
 
     
-    $registrar="INSERT INTO `compras`(`idPoductoCompra`, `idClienteCompra`, `cantidadCompra`, `valorEnvio`, `Total`) VALUES ('$idProducto','$idCliente','$cantidadCompra','$valorEnvio','$valorTotal');";
+    $registrar="INSERT INTO `compras`(`idPoductoCompra`, `idClienteCompra`, `cantidadCompra`, `Total`) VALUES ('$idProducto','$idCliente','$cantidadCompra','$valorTotal');";
     $resultadoRegistro=$conexion->query($registrar);
     // print_r($resultadoRegistro);
     if($resultadoRegistro){

@@ -103,9 +103,8 @@
                             placeholder="Ingrese su número de identificación" name="cc" id="cc" required>
                     </div>
                     <div class="form-group">
-                        <label for="celular">&nbsp; Celular <span>*</span></label>
-                        <input type="number" class="form-control form-control-user" placeholder="Ingrese su celular"
-                            name="celular" id="celular" required>
+                        <label for="Ncelular">&nbsp; Ncelular <span>*</span></label>
+                        <input type="tel" class="form-control form-control-user" placeholder="Ingrese su Ncelular" name="Ncelular" id="Ncelular" required>
                     </div>
                     <!-- Si es un cliente el rol es 2 -->
                     <input name="rol" type="hidden" value="2">

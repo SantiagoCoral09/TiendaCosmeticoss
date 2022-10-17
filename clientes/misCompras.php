@@ -48,14 +48,14 @@ $resultado=$conexion->query($sql);
                 <table class="table table-bordered text-center" width="100%" cellspacing="0">
                     <thead>
                     <th class="text-center">Id compra</th>
-                    <th class="text-center">Id cliente</th>
+                    <th class="text-center">Identificación cliente</th>
                         <th class="text-center">Nombres</th>
                         <th class="text-center">Celular</th>
                         <th class="text-center">Producto</th>
                         <th class="text-center">Precio(Unidad)</th>
                         <th class="text-center">Cantidad</th>
                         <th class="text-center">Categoría</th>
-                        <th class="text-center">Valor</th>
+                        <th class="text-center">Valor + envio</th>
                         <th class="text-center">FechaCompra</th>
 
                     </thead>

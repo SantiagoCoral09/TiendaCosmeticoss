@@ -30,7 +30,7 @@ if($cantidadInventario < $cantidadCompra){
     header("location:../clientes/productos.php?error=1");//No hay suficientes
 }else{
     //$cantidadInv=$cantidadInventario-$cantidadCompra;
-    $valorEnvio=($cantidadCompra*$precio*10)/100;
+    $valorEnvio=1000;
     $valorTotal=$valorEnvio+($cantidadCompra*$precio);
     // echo 'idcli '.$idCliente.' idprod '.$idProducto.' cantCompra '.$cantidadCompra.' precio '.$precio.' cantHabia '.$cantidadInventario.' valEnv '.$valorEnvio.' total '.$valorTotal;
 

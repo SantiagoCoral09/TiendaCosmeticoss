@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2022 a las 20:58:12
+-- Tiempo de generación: 16-10-2022 a las 23:05:28
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.28
 
@@ -53,7 +53,7 @@ CREATE TABLE `compras` (
   `idPoductoCompra` int(15) NOT NULL,
   `idClienteCompra` int(15) NOT NULL,
   `cantidadCompra` int(15) NOT NULL,
-  `valorEnvio` float(15,2) NOT NULL,
+  `valorEnvio` float(15,2) NOT NULL DEFAULT 1000.00,
   `fechaCompra` date NOT NULL DEFAULT current_timestamp(),
   `Total` float(15,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -63,16 +63,9 @@ CREATE TABLE `compras` (
 --
 
 INSERT INTO `compras` (`idCompra`, `idPoductoCompra`, `idClienteCompra`, `cantidadCompra`, `valorEnvio`, `fechaCompra`, `Total`) VALUES
-(1, 2, 4, 3, 1200.00, '2022-10-15', 6900.00),
-(2, 2, 5, 3, 100.00, '2022-10-16', 1566.00),
-(3, 6, 5, 1, 56.00, '2022-10-16', 616.00),
-(4, 2, 5, 1, 230.00, '2022-10-16', 2530.00),
-(5, 2, 4, 1, 230.00, '2022-10-16', 2530.00),
-(6, 4, 4, 0, 0.00, '2022-10-16', 0.00),
-(7, 2, 4, 0, 0.00, '2022-10-16', 0.00),
-(8, 4, 4, 2, 1120.00, '2022-10-16', 12320.00),
-(9, 8, 4, 3, 1800.00, '2022-10-16', 19800.00),
-(10, 9, 5, 4, 10000.00, '2022-10-16', 110000.00);
+(11, 6, 5, 3, 1000.00, '2022-10-16', 16000.00),
+(12, 5, 4, 2, 1000.00, '2022-10-16', 3000.00),
+(13, 4, 10, 2, 1000.00, '2022-10-16', 12200.00);
 
 -- --------------------------------------------------------
 
@@ -97,9 +90,9 @@ CREATE TABLE `productos` (
 INSERT INTO `productos` (`idProd`, `nombre`, `precio`, `cantidad`, `descripcion`, `imagen`, `idCategoria`) VALUES
 (1, 'nombre1', 10000.00, 2, 'Producto essencial en el cuidado de cabello....', '../img/product-img/product-1.jpg', 1),
 (2, 'nombre2', 2300.00, 3, 'Cuida tu cabello con el nuevo....', '../img/product-img/product-2.jpg', 1),
-(4, 'nombre4', 5600.00, 2, 'Para la deshidratación en tus labios', '../img/product-img/product-4.jpg', 2),
-(5, 'nombre5', 1000.00, 3, 'Tus ojos lo dicen todo', '../img/product-img/product-5.jpg', 3),
-(6, 'Crema para la cara', 5000.00, 5, 'Para evitar manchas en la piel', '../img/product-img/product-6.jpg', 4),
+(4, 'nombre4', 5600.00, 0, 'Para la deshidratación en tus labios', '../img/product-img/product-4.jpg', 2),
+(5, 'nombre5', 1000.00, 1, 'Tus ojos lo dicen todo', '../img/product-img/product-5.jpg', 3),
+(6, 'Crema para la cara', 5000.00, 2, 'Para evitar manchas en la piel', '../img/product-img/product-6.jpg', 4),
 (8, 'Acondicionador del cabello', 6000.00, 0, 'Si tienes el cabello reseco', '../img/product-img/default.jpg', 1),
 (9, 'Producto Ojos', 25000.00, 6, 'Para las ojeras', '../img/product-img/default.jpg', 3);
 
@@ -147,7 +140,8 @@ INSERT INTO `usuarios` (`idUsuario`, `identificacion`, `nombres`, `apellidos`, `
 (1, 123456789, 'Administrador', 'del Sistema', 1234567890, 'admin@mail.com', '12345', 1),
 (4, 102346545, 'Santiago', 'Coral', 321455645, 'usuario1@gmail.com', '1234', 2),
 (5, 13125, 'Andres', 'Cordoba', 2147483647, 'andres@gmail.com', '123', 2),
-(8, 123, 'Nuevo', 'Administrador', 123, 'nadmin@gmail.com', '1234', 1);
+(8, 123, 'Nuevo', 'Administrador', 123, 'nadmin@gmail.com', '1234', 1),
+(10, 1023456897, 'Daniela', 'Castro', 2147483647, 'dani@gmail.com', '1234', 2);
 
 --
 -- Índices para tablas volcadas
@@ -195,7 +189,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `idCompra` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idCompra` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -207,7 +201,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idUsuario` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
